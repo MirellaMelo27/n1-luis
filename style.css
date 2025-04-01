@@ -14,6 +14,7 @@ body {
     padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
+    border: 10px solid transparent; /* Borda invisível ao redor do site */
 }
 
 /* Headers */
@@ -106,12 +107,12 @@ section h2 {
 
 /* Ajuste para as imagens na seção de destaques */
 .destaques img {
-    width: 100%; 
-    max-width: 250px; 
-    height: auto; 
+    width: 250px; /* Largura fixa para padronizar */
+    height: 180px; /* Altura fixa para manter o padrão */
+    object-fit: cover; /* Garante que a imagem preencha sem distorção */
     border-radius: 10px; 
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto 15px; 
 }
 
 /* Cardapio/Menu */ 
@@ -120,7 +121,7 @@ section h2 {
 }
 
 .item-cardapio {
-    display: inline-block;
+    display: inline-block;    
     width: 300px;
     margin: 15px;
     padding: 15px;
@@ -135,13 +136,14 @@ section h2 {
 }
 
 .item-cardapio img {
-    width: 100%;
-    max-width: 250px; 
-    height: auto; 
+    width: 250px; /* Definindo uma largura fixa */
+    height: 180px; /* Definindo uma altura fixa para padronização */
+    object-fit: cover; /* Garante que a imagem cubra a área definida sem distorção */
     border-radius: 10px; 
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto 15px; 
 }
+
 
 /*Elementos Específicos para a Página Sobre Nós*/
 .gatos-residentes article, .team-member {
@@ -152,6 +154,18 @@ section h2 {
     text-align: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+.nossa-missao-texto {
+    text-align: left;
+    padding-left: 5px;
+}
+
+
+.gatos-residentes, .team-member {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Aumenta o espaço entre os elementos */
+}
 
 .gatos-residentes img, .team-member img {
     width: 100%;
@@ -159,7 +173,7 @@ section h2 {
     height: auto; 
     border-radius: 10px; 
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto 15px auto; /* Adiciona espaçamento abaixo de cada imagem */
 }
 
 
