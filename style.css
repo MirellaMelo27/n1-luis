@@ -150,8 +150,8 @@ section h2 {
 }
 
 
-/*Elementos Específicos para a Página Sobre Nós*/
-.gatos-residentes article, .team-member{
+/* Sobre nos - layout para telas pequenas e grandes */
+.gatos-residentes article, .team-member {
     background-color: #FFF2CC;
     padding: 15px;
     border-radius: 15px;
@@ -159,44 +159,50 @@ section h2 {
     text-align: center;
     align-items: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    width: 1060px;
-    height: 300;
     
+    width: 90%;  /* Usa 90% da largura da tela */
+    max-width: 1060px; /* Máximo de 1060px */
+    height: auto; /* Altura ajustável */
 }
+
+/* Garante que a missão fique alinhada corretamente */
 .nossa-missao-texto {
     text-align: left;
     padding-left: 5px;
 }
 
-
+/* Layout flexível para gatos e equipe */
 .gatos-residentes, .team-member {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Linha em telas grandes */
+    flex-wrap: wrap; /* Quebra em telas pequenas */
     align-items: center;
     text-align: center;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; /* Aumenta o espaço entre os elementos */
-    margin-left: 25px;
+    gap: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.imagens{
-    display: flex;
-    gap: 15px;
-}
-
+/* Ajuste de imagens para melhor responsividade */
 .gatos-residentes img, .team-member img {
     width: 100%;
-    max-width: 200px; 
-    height: auto; 
-    border-radius: 10px; 
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
     display: block;
-    margin: 0 auto 0px auto; /* Adiciona espaçamento abaixo de cada imagem */
-
+    margin: 0 auto;
 }
 
+/* Imagens lado a lado */
+.imagens {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Para telas menores */
+    justify-content: center;
+}
 
-/*  Perguntas Frequentes */
+/* Perguntas Frequentes */
 .pergunta {
     background-color: #FFF2CC;
     padding: 15px;
@@ -204,6 +210,33 @@ section h2 {
     margin: 15px 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Responsividade para tablets */
+@media screen and (max-width: 768px) {
+    .gatos-residentes, .team-member {
+        flex-direction: column; /* Empilha os itens */
+    }
+
+    .gatos-residentes article, .team-member {
+        width: 95%; /* Usa quase toda a largura */
+    }
+
+    .gatos-residentes img, .team-member img {
+        max-width: 160px; /* Ajuste das imagens */
+    }
+}
+
+/* Responsividade para celulares */
+@media screen and (max-width: 480px) {
+    .gatos-residentes, .team-member {
+        gap: 15px;
+    }
+
+    .gatos-residentes img, .team-member img {
+        max-width: 130px;
+    }
+}
+
 
 /* Rodapé */
 hr {
